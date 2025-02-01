@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Valentines day</title>
+        <link rel="stylesheet" type="text/css" href="valentines.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWt5YXRtOGVpYjNqcG50MDloYnZwZHR1OW1kMTRsa2VnbzRkc2d4NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3iqecQd67Q7kRtDWGN/giphy.gif">
+            <div class="flashcard">
+                <div class="card" id="card">
+                    <div class="side front">
+                        <header class="title">Secret Letters From Someone Special</header>
+                        <div id="front-text"></div>
+                        <button onclick="changeQuote()">Next Letter</button>
+                    </div>
+                    <div class="side back">
+                        <header class="title">Secret Letters From Someone Special</header>
+                        <div id="back-text"></div>
+                        <button onclick="changeQuote()">Next Letter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    // Array of love quotes
+    const quotes = [
+        ["You are my sunshine on a cloudy day.", "Love is not about how many days, months, or years you have been together, it’s about how much you love each other every single day."],
+        ["In your smile I see something more beautiful than stars.", "True love is not about perfection, it’s about accepting each other’s flaws."],
+        ["You have my whole heart for my whole life.", "Love is a language spoken by everyone but understood only by the heart."],
+        ["I belong to my beloved, and my beloved is mine.", "You are my heart, my life, my one and only thought."],
+        ["Thinking of you keeps me awake. Dreaming of you keeps me asleep. Being with you keeps me alive.", "What we have once enjoyed we can never lose. All that we love deeply becomes a part of us."],
+        ["Of all forms of caution, caution in love is perhaps the most fatal to true happiness.", "To love well is the task in all meaningful relationships, not just romantic bonds."],
+        ["You, yourself, as much as anybody in the entire universe, deserve your love and affection.", "Love isn’t something you find. Love is something that finds you."],
+        ["The practice of love offers no place of safety. We risk loss, hurt, pain. We risk being acted upon by forces outside our control.", "Love is shown more in deeds than in words."],
+        ["One is loved because one is loved. No reason is needed for loving.", "And now these three remain: faith, hope and love. But the greatest of these is love."],
+        ["Love is that condition in which the happiness of another person is essential to your own.", "Love is like the wind, you can't see it but you can feel it."],
+        ["I think... if it is true that there are as many minds as there are heads, then there are as many kinds of love as there are hearts.", "In love there are two things: bodies and words."],
+        ["Continue to share your heart with people even if it has been broken.", "To love is to recognize yourself in another."],
+        ["There is always some madness in love. But there is also always some reason in madness.", "Passion makes the world go 'round. Love just makes it a safer place"]
+    ];
+
+    let currentQuoteIndex = 0; // Track which quote is being displayed
+
+    // Function to change the quote and flip the card
+    function changeQuote() {
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length; // Loop through the quotes
+        const [frontQuote, backQuote] = quotes[currentQuoteIndex];
+
+        // Update the quotes on the front and back
+        document.getElementById('front-text').textContent = '"' + frontQuote + '"';
+        document.getElementById('back-text').textContent = '"' + backQuote + '"';
+
+        // Flip the card
+        const card = document.getElementById('card');
+        card.classList.toggle('flipped'); // Toggle the flipped class to rotate the card
+    }
+
+    // Initial setup to display the first quote
+    changeQuote();
+</script>
