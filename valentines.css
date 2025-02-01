@@ -10,11 +10,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     margin: 0;
     background-color: #CBC3E3;
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
@@ -28,7 +29,8 @@ body {
 }
 
 .flashcard {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 250px;
     text-align: center;
     border-radius: 15px;
@@ -115,5 +117,6 @@ button:hover {
     .container {
         flex-direction: column;
         text-align: center;
+        width: 100%;
     }
 }
