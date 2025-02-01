@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vh;
     margin: 0;
     background-color: #CBC3E3;
     overflow: hidden;
