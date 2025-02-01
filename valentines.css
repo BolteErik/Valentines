@@ -16,6 +16,7 @@ body {
     align-items: center;
     perspective: 1500px;
     overflow: visible;
+    max-width:100%;
 }
 
 .flashcard {
